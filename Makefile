@@ -6,14 +6,35 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2018/10/18 20:04:59 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/10/22 11:10:12 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
-NAME	=		libft.a
+## Configutation ##
+CC			=	@gcc
+CFLAGS		+=	-Wall -Wextra -Werror
+AR			=	@ar
+ARFLAGS		=	rcs
+MKDIR		=	@mkdir -p
+RM			=	@rm
 
-SRCS	=		ft_atoi.c \
+
+## Colors        ##
+white		=	\033[0m
+red			=	\033[31m
+green		=	\033[32m
+yellow		=	\033[33m
+
+
+## Files         ##
+NAME		=	libft.a
+
+PINCLUDE	=	./includes/
+INCLUDES	=	$(wildcard $(PINCLUDE)*.h)
+
+PSRC		=	./
+SRCS		=	ft_atoi.c \
 				ft_bzero.c \
 				ft_error.c \
 				ft_isalnum.c \
@@ -72,47 +93,51 @@ SRCS	=		ft_atoi.c \
 				ft_strtrim.c \
 				ft_toupper.c \
 				ft_tolower.c \
-				ft_abs.c \
+				ft_error.c \
+				ft_intabs.c \
+				ft_intmintriple.c \
+				ft_intpower.c \
+				ft_intsqrt.c \
+				ft_intswap.c \
 				ft_isblanc.c \
-				ft_power.c \
+				ft_lstreverse.c \
+				ft_memrealloc.c \
 				ft_putuchar_fd.c \
 				ft_putustr_fd.c \
-				ft_sqrt.c \
 				ft_strrev.c \
-				ft_swap.c \
-				ft_swapstr.c \
-				ft_min_triple_int.c
+				ft_strswap.c
 
-INCLUDES	=	$(wildcard includes/*.h)
+POBJ		=	./obj/
+OBJS		=	$(POBJ)$(SRCS:.c=.o)
 
-OBJS		=	$(SRCS:.c=.o)
+DIRALL		=	$(POBJ)
 
-CC			=	@gcc
 
-CFLAGS		+=	-Wall -Wextra -Werror
+## Rules         ##
 
-AR			=	@ar
-
-ARFLAGS		=	rc
-
-RM			=	@rm -f
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(DIRALL) $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-	@printf '\033[32m-> Libft compiled \033[33m    [OK]\n'
+	@echo "${green}-> Libft compiled ${yellow}     [OK]${white}"
 
-$(OBJS): $(SRCS)
-	$(CC) -c $(CFLAGS) $(SRCS) -I $(INCLUDES)
-	@printf '\033[32m-> Libft build objet \033[33m [OK]\n'
+$(DIRALL):
+	$(MKDIR) $@
+	@echo "${green}-> Libft make dir obj ${yellow} [OK]${white}"
+
+$(POBJ)%.o: $(PSRC)%.c
+	$(CC) -c $(CFLAGS) $< -I $(INCLUDES) -o $@
+	@echo "${green}-> Libft build objet ${yellow}  [OK]${white}"
 
 clean:
-	$(RM) $(OBJS)
-	@printf '\033[32m-> Libft clean \033[33m       [OK]\n'
+	$(RM) -f $(OBJS)
+	$(RM) -rf $(POBJ)
+	@echo "${green}-> Libft clean ${yellow}        [OK]${white}"
 
 fclean: clean
-	$(RM) $(NAME)
-	@printf '\033[32m-> Libft full clean \033[33m  [OK]\n'
+	$(RM) -f $(NAME)
+	@echo "${green}-> Libft full clean ${yellow}   [OK]${white}"
 
 re: fclean all

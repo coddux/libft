@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_error.c                                       .::    .:/ .      .::   */
+/*   ft_intpower.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/17 18:17:31 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 10:57:20 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/18 12:53:43 by alepercq     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/22 10:52:42 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-void	ft_error(int error, char *filename)
+int	ft_intpower(int nb, int pwr)
 {
-	ft_putstr_fd(filename, 2);
-	ft_putstr_fd(": ", 2);
-	if (error == EACCES)
-		ft_putstr_fd("Permission denied\n", 2);
-	else if (error == ENOENT)
-		ft_putstr_fd("No such file or directory\n", 2);
-	else if (error == EISDIR)
-		ft_putstr_fd("Is a directory\n", 2);
-	else if (error == ENAMETOOLONG)
-		ft_putstr_fd("File name too long\n", 2);
+	int i;
+	int	power;
+
+	if ((nb == 0) || (pwr == 0) || (!nb) || (!pwr))
+		return (0);
+	if (nb == 1)
+		return (1);
+	i = 0;
+	while (i < pwr)
+	{
+		power = nb * nb;
+		i = i + 1;
+	}
+	return (power);
 }

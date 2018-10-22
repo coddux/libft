@@ -6,7 +6,7 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/11 10:59:59 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 18:02:33 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/22 11:00:31 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -34,7 +34,7 @@ char			*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	else if (ft_abs(n) == 0)
+	else if (ft_intabs(n) == 0)
 		return (ft_strdup("0"));
 	neg = ((n < 0) ? -1 : 0);
 	l = ft_int_length(n);

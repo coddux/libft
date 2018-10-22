@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_error.c                                       .::    .:/ .      .::   */
+/*   ft_memrealloc.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/17 18:17:31 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 10:57:20 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/19 12:45:38 by alepercq     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/22 10:55:36 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-void	ft_error(int error, char *filename)
+void	*ft_memrealloc(void *v, size_t size)
 {
-	ft_putstr_fd(filename, 2);
-	ft_putstr_fd(": ", 2);
-	if (error == EACCES)
-		ft_putstr_fd("Permission denied\n", 2);
-	else if (error == ENOENT)
-		ft_putstr_fd("No such file or directory\n", 2);
-	else if (error == EISDIR)
-		ft_putstr_fd("Is a directory\n", 2);
-	else if (error == ENAMETOOLONG)
-		ft_putstr_fd("File name too long\n", 2);
+	void	*vr;
+
+	if (!v || !size)
+		return (NULL);
+	if (!(vr = ft_strnew(size)))
+		return (NULL);
+	ft_strcpy(vr, v);
+	return (vr);
 }

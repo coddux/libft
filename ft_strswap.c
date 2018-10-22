@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_error.c                                       .::    .:/ .      .::   */
+/*   ft_swapstr.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/17 18:17:31 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 10:57:20 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/15 16:12:57 by alepercq     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/18 12:53:01 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-void	ft_error(int error, char *filename)
+void	ft_swapstr(char *str1, char *str2)
 {
-	ft_putstr_fd(filename, 2);
-	ft_putstr_fd(": ", 2);
-	if (error == EACCES)
-		ft_putstr_fd("Permission denied\n", 2);
-	else if (error == ENOENT)
-		ft_putstr_fd("No such file or directory\n", 2);
-	else if (error == EISDIR)
-		ft_putstr_fd("Is a directory\n", 2);
-	else if (error == ENAMETOOLONG)
-		ft_putstr_fd("File name too long\n", 2);
+	char	*swp;
+
+	swp = str1;
+	str1 = str2;
+	str2 = swp;
 }

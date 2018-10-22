@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_error.c                                       .::    .:/ .      .::   */
+/*   ft_lstreverse.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/17 18:17:31 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 10:57:20 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/22 11:02:50 by alepercq     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/22 11:07:29 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-void	ft_error(int error, char *filename)
+t_list	*ft_lst_reverse(t_list *blst)
 {
-	ft_putstr_fd(filename, 2);
-	ft_putstr_fd(": ", 2);
-	if (error == EACCES)
-		ft_putstr_fd("Permission denied\n", 2);
-	else if (error == ENOENT)
-		ft_putstr_fd("No such file or directory\n", 2);
-	else if (error == EISDIR)
-		ft_putstr_fd("Is a directory\n", 2);
-	else if (error == ENAMETOOLONG)
-		ft_putstr_fd("File name too long\n", 2);
+	t_list	*alst;
+	t_list	*tmplst;
+	t_list	*clst;
+
+	alst = NULL;
+	tmplst = blst;
+	while (tmplst != NULL)
+	{
+		clst = tmplst->next;
+		tmplst->next = alst;
+		alst = tmplst;
+		tmplst = clst;
+	}
+	blst = alst;
+	return (blst);
 }

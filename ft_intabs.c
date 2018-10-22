@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_error.c                                       .::    .:/ .      .::   */
+/*   ft_intabs.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/17 18:17:31 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 10:57:20 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/11 14:12:13 by alepercq     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/22 10:51:59 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-void	ft_error(int error, char *filename)
+int		ft_intabs(int n)
 {
-	ft_putstr_fd(filename, 2);
-	ft_putstr_fd(": ", 2);
-	if (error == EACCES)
-		ft_putstr_fd("Permission denied\n", 2);
-	else if (error == ENOENT)
-		ft_putstr_fd("No such file or directory\n", 2);
-	else if (error == EISDIR)
-		ft_putstr_fd("Is a directory\n", 2);
-	else if (error == ENAMETOOLONG)
-		ft_putstr_fd("File name too long\n", 2);
+	if (n < 0)
+		n = -n;
+	else if ((n == -0) || (n == 0))
+		n = 0;
+	return (n);
 }
