@@ -6,7 +6,7 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 12:27:38 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 10:58:32 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/22 17:14:01 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -93,7 +93,8 @@ int				ft_intpower(int nb, int pwr);
 int				ft_intsqrt(int nb);
 void			ft_intswap(int *a, int *b);
 int				ft_isblanc(char c);
-t_list			*ft_lst_reverse(t_list *blst);
+t_list			*ft_lstrev(t_list *blst);
+int				ft_lstsize(t_list *alist);
 void			ft_putuchar_fd(int fd, wchar_t c);
 void			ft_putustr_fd(int fd, wchar_t *str);
 void			*ft_memrealloc(void *v, size_t size);

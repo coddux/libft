@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_lstreverse.c                                  .::    .:/ .      .::   */
+/*   ft_lstsize.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/22 11:02:50 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 11:07:29 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/22 15:31:18 by alepercq     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/22 15:38:58 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-t_list	*ft_lst_reverse(t_list *blst)
+int		ft_lstsize(t_list *alist)
 {
-	t_list	*alst;
-	t_list	*tmplst;
-	t_list	*clst;
+	int		i;
+	t_list	*scanlist;
 
-	alst = NULL;
-	tmplst = blst;
-	while (tmplst != NULL)
+	i = 0;
+	if (alist != NULL)
 	{
-		clst = tmplst->next;
-		tmplst->next = alst;
-		alst = tmplst;
-		tmplst = clst;
+		scanlist = alist;
+		while (scanlist != NULL)
+		{
+			scanlist = scanlist->next;
+			i = i + 1;
+		}
 	}
-	blst = alst;
-	return (blst);
+	return (i);
 }

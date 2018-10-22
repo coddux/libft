@@ -6,18 +6,24 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2018/10/22 11:10:12 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/10/22 17:29:02 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
 ## Configutation ##
+
 CC			=	@gcc
+#CC			=	gcc
 CFLAGS		+=	-Wall -Wextra -Werror
 AR			=	@ar
+#AR			=	ar
+#ARFLAGS		=	rc
 ARFLAGS		=	rcs
 MKDIR		=	@mkdir -p
+#MKDIR		=	mkdir -p
 RM			=	@rm
+#RM			=	rm
 
 
 ## Colors        ##
@@ -28,13 +34,18 @@ yellow		=	\033[33m
 
 
 ## Files         ##
+
 NAME		=	libft.a
 
-PINCLUDE	=	./includes/
-INCLUDES	=	$(wildcard $(PINCLUDE)*.h)
+PATH_INC	=	includes/
+PATH_SRC	=	
+PATH_OBJ	=	obj/
+PATH_ALL	=	$(PATH_OBJ)
 
-PSRC		=	./
-SRCS		=	ft_atoi.c \
+#INCLUDES	=	$(wildcard $(PINCLUDE)*.h)
+INCLUDES	=	$(addprefix $(PATH_INC), libft.h)
+
+SRC			=	ft_atoi.c \
 				ft_bzero.c \
 				ft_error.c \
 				ft_isalnum.c \
@@ -100,17 +111,17 @@ SRCS		=	ft_atoi.c \
 				ft_intsqrt.c \
 				ft_intswap.c \
 				ft_isblanc.c \
-				ft_lstreverse.c \
+				ft_lstrev.c \
+				ft_lstsize.c \
 				ft_memrealloc.c \
 				ft_putuchar_fd.c \
 				ft_putustr_fd.c \
 				ft_strrev.c \
 				ft_strswap.c
+SRCS		=	$(addprefix $(PATH_SRC), $(SRC))
 
-POBJ		=	./obj/
-OBJS		=	$(POBJ)$(SRCS:.c=.o)
-
-DIRALL		=	$(POBJ)
+OBJ			=	$(SRC:.c=.o)
+OBJS		=	$(addprefix $(PATH_OBJ), $(OBJ))
 
 
 ## Rules         ##
@@ -119,25 +130,31 @@ DIRALL		=	$(POBJ)
 
 all: $(NAME)
 
-$(NAME): $(DIRALL) $(OBJS)
+$(NAME): $(PATH_ALL) $(OBJS) $(MSG_OBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+#	$(echo \e[1;31mError\e[0m)
 	@echo "${green}-> Libft compiled ${yellow}     [OK]${white}"
 
-$(DIRALL):
+$(PATH_ALL):
 	$(MKDIR) $@
+#	$(echo \e[1;31mError\e[0m)
 	@echo "${green}-> Libft make dir obj ${yellow} [OK]${white}"
 
-$(POBJ)%.o: $(PSRC)%.c
-	$(CC) -c $(CFLAGS) $< -I $(INCLUDES) -o $@
+$(MSG_OBJ):
 	@echo "${green}-> Libft build objet ${yellow}  [OK]${white}"
 
+$(PATH_OBJ)%.o: $(PATH_SRC)%.c | $(PATH_ALL)
+	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
+#	$(echo \e[1;31mError\e[0m)
+
 clean:
-	$(RM) -f $(OBJS)
-	$(RM) -rf $(POBJ)
+	$(RM) -rf $(PATH_OBJ)
+#	$(echo \e[1;31mError\e[0m)
 	@echo "${green}-> Libft clean ${yellow}        [OK]${white}"
 
 fclean: clean
 	$(RM) -f $(NAME)
+#	$(echo \e[1;31mError\e[0m)
 	@echo "${green}-> Libft full clean ${yellow}   [OK]${white}"
 
 re: fclean all
