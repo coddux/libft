@@ -6,24 +6,18 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2018/10/22 17:29:02 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/10/24 09:23:17 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
 ## Configutation ##
-
 CC			=	@gcc
-#CC			=	gcc
 CFLAGS		+=	-Wall -Wextra -Werror
 AR			=	@ar
-#AR			=	ar
-#ARFLAGS		=	rc
 ARFLAGS		=	rcs
 MKDIR		=	@mkdir -p
-#MKDIR		=	mkdir -p
 RM			=	@rm
-#RM			=	rm
 
 
 ## Colors        ##
@@ -34,7 +28,6 @@ yellow		=	\033[33m
 
 
 ## Files         ##
-
 NAME		=	libft.a
 
 PATH_INC	=	includes/
@@ -42,7 +35,7 @@ PATH_SRC	=
 PATH_OBJ	=	obj/
 PATH_ALL	=	$(PATH_OBJ)
 
-#INCLUDES	=	$(wildcard $(PINCLUDE)*.h)
+#INCLUDES	=	$(wildcard $(PATH_INC)*.h)
 INCLUDES	=	$(addprefix $(PATH_INC), libft.h)
 
 SRC			=	ft_atoi.c \
@@ -117,7 +110,9 @@ SRC			=	ft_atoi.c \
 				ft_putuchar_fd.c \
 				ft_putustr_fd.c \
 				ft_strrev.c \
-				ft_strswap.c
+				ft_strline.c \
+				ft_strswap.c \
+				ft_strword.c
 SRCS		=	$(addprefix $(PATH_SRC), $(SRC))
 
 OBJ			=	$(SRC:.c=.o)
@@ -125,7 +120,6 @@ OBJS		=	$(addprefix $(PATH_OBJ), $(OBJ))
 
 
 ## Rules         ##
-
 .PHONY: all clean fclean re
 
 all: $(NAME)
