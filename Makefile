@@ -6,18 +6,22 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2018/10/24 09:51:54 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/11/05 16:25:52 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
 ## Configutation ##
-CC			=	@gcc
+#CC			=	@gcc
+CC			=	gcc
 CFLAGS		+=	-Wall -Wextra -Werror
-AR			=	@ar
-ARFLAGS		=	rcs
-MKDIR		=	@mkdir -p
-RM			=	@rm
+#AR			=	@ar
+AR			=	ar
+ARFLAGS		=	ru
+#MKDIR		=	@mkdir -p
+MKDIR		=	mkdir -p
+#RM			=	@rm
+RM			=	rm
 
 
 ## Colors        ##
@@ -35,12 +39,12 @@ PATH_SRC	=
 PATH_OBJ	=	obj/
 PATH_ALL	=	$(PATH_OBJ)
 
-#INCLUDES	=	$(wildcard $(PATH_INC)*.h)
-INCLUDES	=	$(addprefix $(PATH_INC), libft.h)
+INCLUDE		=	libft.h
+#INCLUDES	=	$(addprefix $(PATH_INC), $(wildcard *.h))
+INCLUDES	=	$(addprefix $(PATH_INC), $(INCLUDE))
 
 SRC			=	ft_atoi.c \
 				ft_bzero.c \
-				ft_error.c \
 				ft_isalnum.c \
 				ft_isalpha.c \
 				ft_isascii.c \
@@ -105,6 +109,7 @@ SRC			=	ft_atoi.c \
 				ft_intswap.c \
 				ft_isblanc.c \
 				ft_lstrev.c \
+				ft_lstlast.c \
 				ft_lstsize.c \
 				ft_memrealloc.c \
 				ft_putuchar_fd.c \
@@ -112,7 +117,8 @@ SRC			=	ft_atoi.c \
 				ft_strrev.c \
 				ft_strline.c \
 				ft_strswap.c \
-				ft_strword.c
+				ft_strword.c \
+				get_next_line.c
 SRCS		=	$(addprefix $(PATH_SRC), $(SRC))
 
 OBJ			=	$(SRC:.c=.o)
@@ -124,8 +130,8 @@ OBJS		=	$(addprefix $(PATH_OBJ), $(OBJ))
 
 all: $(NAME)
 
-$(NAME): $(PATH_ALL) $(OBJS) $(MSG_OBJ)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $?
 #	$(echo \e[1;31mError\e[0m)
 	@echo "${green}-> Libft compiled ${yellow}     [OK]${white}"
 
@@ -137,12 +143,13 @@ $(PATH_ALL):
 $(MSG_OBJ):
 	@echo "${green}-> Libft build objet ${yellow}  [OK]${white}"
 
-$(PATH_OBJ)%.o: $(PATH_SRC)%.c | $(PATH_ALL)
+$(PATH_OBJ)%.o: $(PATH_SRC)%.c $(INCLUDES) | $(PATH_ALL) $(MSG_OBJ)
 	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 #	$(echo \e[1;31mError\e[0m)
 
 clean:
 	$(RM) -rf $(PATH_OBJ)
+#	$(RM) -f $(OBJ)
 #	$(echo \e[1;31mError\e[0m)
 	@echo "${green}-> Libft clean ${yellow}        [OK]${white}"
 

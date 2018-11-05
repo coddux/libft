@@ -6,7 +6,7 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 12:27:38 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/24 09:52:41 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/05 16:07:47 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,6 +18,10 @@
 # include <unistd.h>
 # include <string.h>
 # include <errno.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+
+# define BUFF_SIZE 4096
 
 typedef	struct	s_list
 {
@@ -28,7 +32,6 @@ typedef	struct	s_list
 
 int				ft_atoi(char const *str);
 void			ft_bzero(void *v, size_t n);
-void			ft_error(int error, char *filename);
 int				ft_isalnum(int i);
 int				ft_isalpha(int i);
 int				ft_isascii(int i);
@@ -86,6 +89,8 @@ char			*ft_strtrim(char const *str);
 int				ft_toupper(int i);
 int				ft_tolower(int i);
 
+int				get_next_line(const int fd, char **line);
+
 void			ft_error(int error, char *filename);
 int				ft_intabs(int n);
 int				ft_intmintriple(int vala, int valb, int valc);
@@ -93,6 +98,7 @@ int				ft_intpower(int nb, int pwr);
 int				ft_intsqrt(int nb);
 void			ft_intswap(int *a, int *b);
 int				ft_isblanc(char c);
+t_list			*ft_lstlast(t_list *alist);
 t_list			*ft_lstrev(t_list *blst);
 int				ft_lstsize(t_list *alist);
 void			ft_putuchar_fd(int fd, wchar_t c);
