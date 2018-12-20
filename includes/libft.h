@@ -6,7 +6,7 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 12:27:38 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/05 16:07:47 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/20 14:30:44 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -92,12 +92,16 @@ int				ft_tolower(int i);
 int				get_next_line(const int fd, char **line);
 
 void			ft_error(int error, char *filename);
-int				ft_intabs(int n);
-int				ft_intmintriple(int vala, int valb, int valc);
-int				ft_intpower(int nb, int pwr);
-int				ft_intsqrt(int nb);
-void			ft_intswap(int *a, int *b);
+int				ft_int_abs(int n);
+void			ft_int_find_minmax(int c_sum, int c_min, int c_max);
+int				ft_int_max(int *vref, int vsum);
+int				ft_int_min(int *vref, int vsum);
+int				ft_int_power(int nb, int pwr);
+int				ft_int_sqrt(int nb);
+void			ft_int_swap(int *a, int *b);
+int				ft_int_triple_min(int vala, int valb, int valc);
 int				ft_isblanc(char c);
+int				ft_isprime(int p);
 t_list			*ft_lstlast(t_list *alist);
 t_list			*ft_lstrev(t_list *blst);
 int				ft_lstsize(t_list *alist);
@@ -107,6 +111,7 @@ void			*ft_memrealloc(void *v, size_t size);
 int				ft_strline(char *str);
 char			*ft_strrev(char *str);
 void			ft_strswap(char *str1, char *str2);
-int				strword(char const *s, char c);
+int				ft_strword(char const *s, char c);
+void			ft_time_wait(unsigned long int time_delay);
 
 #endif

@@ -6,22 +6,18 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2018/11/05 16:25:52 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/12/20 14:28:22 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
 ## Configutation ##
-#CC			=	@gcc
-CC			=	gcc
+CC			=	@gcc
 CFLAGS		+=	-Wall -Wextra -Werror
-#AR			=	@ar
-AR			=	ar
+AR			=	@ar
 ARFLAGS		=	ru
-#MKDIR		=	@mkdir -p
-MKDIR		=	mkdir -p
-#RM			=	@rm
-RM			=	rm
+MKDIR		=	@mkdir -p
+RM			=	@rm
 
 
 ## Colors        ##
@@ -102,12 +98,16 @@ SRC			=	ft_atoi.c \
 				ft_toupper.c \
 				ft_tolower.c \
 				ft_error.c \
-				ft_intabs.c \
-				ft_intmintriple.c \
-				ft_intpower.c \
-				ft_intsqrt.c \
-				ft_intswap.c \
+				ft_int_abs.c \
+				ft_int_find_minmax.c \
+				ft_int_max.c \
+				ft_int_min.c \
+				ft_int_power.c \
+				ft_int_sqrt.c \
+				ft_int_swap.c \
+				ft_int_triple_min.c \
 				ft_isblanc.c \
+				ft_isprime.c \
 				ft_lstrev.c \
 				ft_lstlast.c \
 				ft_lstsize.c \
@@ -118,6 +118,7 @@ SRC			=	ft_atoi.c \
 				ft_strline.c \
 				ft_strswap.c \
 				ft_strword.c \
+				ft_time_wait.c \
 				get_next_line.c
 SRCS		=	$(addprefix $(PATH_SRC), $(SRC))
 

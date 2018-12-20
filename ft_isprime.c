@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strword.c                                     .::    .:/ .      .::   */
+/*   ft_isprime.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/22 18:34:41 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/20 11:50:34 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/09 10:11:55 by alepercq     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/09 10:16:42 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-int		ft_strword(char const *s, char c)
+int		ft_isprime(int p)
 {
 	int		i;
-	int		wd;
 
-	i = 0;
-	wd = 0;
-	while ((s[i] == c)  && s[i])
-		i = i + 1;
-	while (s[i])
+	i = 3;
+	while (((!p % 2) && (p != 2)) || (p <= 1))
+		return (0);
+	while ((i * i) < p)
 	{
-		while ((s[i] != c) && (s[i]))
-			i = i + 1;
-		wd = wd + 1;
-		while ((s[i] == c) && (s[i]))
-			i = i + 1;
+		if ((p % i) == 0)
+			return (0);
+		i = i + 2;
 	}
-	return (wd);
+	return (1);
 }

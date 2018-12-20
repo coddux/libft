@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strword.c                                     .::    .:/ .      .::   */
+/*   ft_time_wait.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/22 18:34:41 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/20 11:50:34 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/08 16:44:36 by alepercq     #+#   ##    ##    #+#       */
+/*   Updated: 2018/12/20 11:54:34 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-int		ft_strword(char const *s, char c)
+void	ft_time_wait(unsigned long int time_delay)
 {
-	int		i;
-	int		wd;
+	unsigned long int	itime;
+	unsigned long int	time_max;
 
-	i = 0;
-	wd = 0;
-	while ((s[i] == c)  && s[i])
-		i = i + 1;
-	while (s[i])
-	{
-		while ((s[i] != c) && (s[i]))
-			i = i + 1;
-		wd = wd + 1;
-		while ((s[i] == c) && (s[i]))
-			i = i + 1;
-	}
-	return (wd);
+	itime = 0;
+	time_max = time_delay * 100000;
+	while (itime <= time_max)
+		itime = itime + 1;
 }
