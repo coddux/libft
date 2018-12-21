@@ -11,7 +11,7 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "inc/libft.h"
 
 int		ft_isalpha(int c)
 {

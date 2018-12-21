@@ -11,7 +11,7 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "inc/libft.h"
 
 char	*ft_strncat(char *str1, char const *str2, size_t len)
 {

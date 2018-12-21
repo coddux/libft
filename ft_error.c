@@ -6,12 +6,12 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/17 18:17:31 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 16:48:25 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/21 13:50:32 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "inc/libft.h"
 
 void	ft_error(int error, char *filename)
 {

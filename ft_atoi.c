@@ -6,12 +6,12 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 14:52:30 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 17:14:27 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/21 13:50:24 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "inc/libft.h"
 
 static int		res_atoi(int neg, long n, int in, int i)
 {

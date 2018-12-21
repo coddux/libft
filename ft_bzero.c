@@ -6,12 +6,12 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/08 20:07:52 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 18:00:58 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/21 13:50:28 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "inc/libft.h"
 
 void	ft_bzero(void *v, size_t n)
 {

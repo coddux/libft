@@ -6,7 +6,7 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2018/12/20 14:28:22 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/12/21 13:56:24 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -30,7 +30,7 @@ yellow		=	\033[33m
 ## Files         ##
 NAME		=	libft.a
 
-PATH_INC	=	includes/
+PATH_INC	=	inc/
 PATH_SRC	=	
 PATH_OBJ	=	obj/
 PATH_ALL	=	$(PATH_OBJ)
@@ -40,28 +40,28 @@ INCLUDE		=	libft.h
 INCLUDES	=	$(addprefix $(PATH_INC), $(INCLUDE))
 
 SRC			=	ft_atoi.c ft_int_abs.c \
-				ft_int_find_minmax.c ft_int_max.c ft_int_min.c ft_int_triple_min.c\
-				ft_int_power.c ft_int_sqrt.c \
+				ft_int_find_minmax.c ft_int_max.c ft_int_min.c \
+				ft_int_triple_min.c ft_int_power.c ft_int_sqrt.c \
 				ft_int_swap.c \
 				ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblanc.c \
 				ft_isdigit.c ft_isprime.c ft_isprint.c \
-				ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-				ft_lstmap.c ft_lstnew.c ft_lstrev.c ft_lstsize.c \
+				ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c \
+				ft_lstlast.c ft_lstmap.c ft_lstnew.c \
+				ft_lstrev.c ft_lstsize.c \
 				ft_bzero.c \
-				ft_memalloc.c ft_memrealloc.c
-				ft_memccpy.c ft_memcpy.c \
-				ft_memchr.c ft_memcmp.c \
-				ft_memdel.c ft_memmove.c \
-				ft_memset.c \
+				ft_memalloc.c ft_memrealloc.c \
+				ft_memccpy.c ft_memcpy.c ft_memchr.c ft_memcmp.c \
+				ft_memdel.c ft_memmove.c ft_memset.c \
 				ft_putchar.c ft_putchar_fd.c ft_putuchar_fd.c \
 				ft_putendl.c ft_putendl_fd.c \
 				ft_putnbr.c ft_putnbr_fd.c \
 				ft_putstr.c ft_putstr_fd.c ft_putustr_fd.c \
 				ft_itoa.c \
-				ft_strcat.c ft_strlcat.c ft_strncat.c ft_strchr.c ft_strclr.c
+				ft_strcat.c ft_strlcat.c ft_strncat.c ft_strchr.c ft_strclr.c \
 				ft_strcmp.c ft_strncmp.c \
 				ft_strcpy.c ft_strncpy.c \
-				ft_strdel.c ft_strdup.c ft_strequ.c ft_strnequ.c ft_striter.c ft_striteri.c \
+				ft_strdel.c ft_strdup.c ft_strequ.c ft_strnequ.c \
+				ft_striter.c ft_striteri.c \
 				ft_strjoin.c  ft_strlen.c ft_strline.c \
 				ft_strmap.c ft_strmapi.c  ft_strnew.c \
 				ft_strnstr.c ft_strrchr.c ft_strstr.c \
