@@ -6,7 +6,7 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 12:27:38 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/21 13:50:20 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/14 15:03:04 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,6 +45,7 @@ int				ft_int_power(int nb, int pwr);
 int				ft_int_sqrt(int nb);
 void			ft_int_swap(int *a, int *b);
 int				ft_int_triple_min(int vala, int valb, int valc);
+int				ft_getnbr(char *str);
 
 /*
 ** function is

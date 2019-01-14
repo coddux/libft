@@ -6,7 +6,7 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2018/12/21 13:56:24 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/01/14 15:02:28 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -29,6 +29,7 @@ yellow		=	\033[33m
 
 ## Files         ##
 NAME		=	libft.a
+LIBS		=	libft
 
 PATH_INC	=	inc/
 PATH_SRC	=	
@@ -56,7 +57,7 @@ SRC			=	ft_atoi.c ft_int_abs.c \
 				ft_putendl.c ft_putendl_fd.c \
 				ft_putnbr.c ft_putnbr_fd.c \
 				ft_putstr.c ft_putstr_fd.c ft_putustr_fd.c \
-				ft_itoa.c \
+				ft_itoa.c ft_getnbr.c \
 				ft_strcat.c ft_strlcat.c ft_strncat.c ft_strchr.c ft_strclr.c \
 				ft_strcmp.c ft_strncmp.c \
 				ft_strcpy.c ft_strncpy.c \
@@ -70,7 +71,7 @@ SRC			=	ft_atoi.c ft_int_abs.c \
 				ft_toupper.c ft_tolower.c \
 				get_next_line.c \
 				ft_error.c \
-				ft_time_wait.c \
+				ft_time_wait.c
 				
 SRCS		=	$(addprefix $(PATH_SRC), $(SRC))
 
@@ -86,15 +87,15 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $?
 #	$(echo \e[1;31mError\e[0m)
-	@echo "${green}-> Libft compiled ${yellow}     [OK]${white}"
+	@echo "${green}-> ${LIBS} compiled ${yellow}     [OK]${white}"
 
 $(PATH_ALL):
 	$(MKDIR) $@
 #	$(echo \e[1;31mError\e[0m)
-	@echo "${green}-> Libft make dir obj ${yellow} [OK]${white}"
+	@echo "${green}-> ${LIBS} make dir obj ${yellow} [OK]${white}"
 
 $(MSG_OBJ):
-	@echo "${green}-> Libft build objet ${yellow}  [OK]${white}"
+	@echo "${green}-> ${LIBS} build objet ${yellow}  [OK]${white}"
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c $(INCLUDES) | $(PATH_ALL) $(MSG_OBJ)
 	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
@@ -104,11 +105,11 @@ clean:
 	$(RM) -rf $(PATH_OBJ)
 #	$(RM) -f $(OBJ)
 #	$(echo \e[1;31mError\e[0m)
-	@echo "${green}-> Libft clean ${yellow}        [OK]${white}"
+	@echo "${green}-> ${LIBS} clean ${yellow}        [OK]${white}"
 
 fclean: clean
 	$(RM) -f $(NAME)
 #	$(echo \e[1;31mError\e[0m)
-	@echo "${green}-> Libft full clean ${yellow}   [OK]${white}"
+	@echo "${green}-> ${LIBS} full clean ${yellow}   [OK]${white}"
 
 re: fclean all
