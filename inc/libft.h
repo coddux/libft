@@ -6,7 +6,7 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 12:27:38 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/18 13:17:12 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/18 14:33:32 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -93,6 +93,7 @@ void	*ft_memset(void *v, int c, size_t len);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putuchar_fd(int fd, wchar_t c);
+char	*ft_chrtostr(char chr);
 void	ft_putendl(char const *str);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr(int n);
