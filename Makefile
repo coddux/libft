@@ -6,7 +6,7 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2019/01/18 13:09:19 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/01/18 14:27:10 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -53,7 +53,7 @@ SRC			=	ft_atoi.c ft_int_abs.c \
 				ft_memalloc.c ft_memrealloc.c \
 				ft_memccpy.c ft_memcpy.c ft_memchr.c ft_memcmp.c \
 				ft_memdel.c ft_memmove.c ft_memset.c \
-				ft_putchar.c ft_putchar_fd.c ft_putuchar_fd.c \
+				ft_putchar.c ft_putchar_fd.c ft_putuchar_fd.c ft_chrtostr.c \
 				ft_putendl.c ft_putendl_fd.c \
 				ft_putnbr.c ft_putnbr_fd.c \
 				ft_putstr.c ft_putstr_tab.c ft_putstr_fd.c ft_putustr_fd.c \
