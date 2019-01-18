@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strword.c                                     .::    .:/ .      .::   */
+/*   ft_file_open.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/22 18:34:41 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/18 13:15:32 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/01/18 13:09:30 by alepercq     #+#   ##    ##    #+#       */
+/*   Updated: 2019/01/18 13:17:34 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "inc/libft.h"
 
-int		ft_strword(char const *s, char c)
+int		ft_file_open(char *s_file)
 {
-	int		i;
-	int		wd;
+	int	fd;
 
-	i = 0;
-	wd = 0;
-	while ((s[i] == c) && s[i])
-		i = i + 1;
-	while (s[i])
-	{
-		while ((s[i] != c) && (s[i]))
-			i = i + 1;
-		wd = wd + 1;
-		while ((s[i] == c) && (s[i]))
-			i = i + 1;
-	}
-	return (wd);
+	if ((fd = open(s_file, O_RDONLY)) < 1)
+		return (-1);
+	return (fd);
 }
