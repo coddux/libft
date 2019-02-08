@@ -6,7 +6,7 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 12:27:38 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/18 14:33:32 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/02/08 12:25:21 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -43,6 +43,7 @@ int		ft_int_abs(int n);
 void	ft_int_find_minmax(int c_sum, int c_min, int c_max);
 int		ft_int_max(int *vref, int vsum);
 int		ft_int_min(int *vref, int vsum);
+int		ft_int_mod(int nb, int modulo);
 int		ft_int_power(int nb, int pwr);
 int		ft_int_sqrt(int nb);
 void	ft_int_swap(int *a, int *b);
@@ -139,6 +140,12 @@ char	*ft_strtrim(char const *str);
 int		ft_strword(char const *s, char c);
 int		ft_toupper(int i);
 int		ft_tolower(int i);
+
+/*
+** function create and initialise tab
+*/
+int		**ft_tab_icreate(int line, int column, int nb);
+char	**ft_tab_screate(int line, int column, char c);
 
 /*
 ** function file

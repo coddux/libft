@@ -6,7 +6,7 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2019/01/18 14:27:10 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/02/08 12:25:46 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -41,7 +41,7 @@ INCLUDE		=	libft.h
 INCLUDES	=	$(addprefix $(PATH_INC), $(INCLUDE))
 
 SRC			=	ft_atoi.c ft_int_abs.c \
-				ft_int_find_minmax.c ft_int_max.c ft_int_min.c \
+				ft_int_find_minmax.c ft_int_max.c ft_int_min.c ft_int_mod.c \
 				ft_int_triple_min.c ft_int_power.c ft_int_sqrt.c \
 				ft_int_swap.c \
 				ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblanc.c \
@@ -71,6 +71,7 @@ SRC			=	ft_atoi.c ft_int_abs.c \
 				ft_toupper.c ft_tolower.c \
 				ft_file_open.c ft_file_read.c get_next_line.c \
 				ft_error.c \
+				ft_tab_icreate.c ft_tab_screate.c \
 				ft_time_wait.c
 				
 SRCS		=	$(addprefix $(PATH_SRC), $(SRC))
