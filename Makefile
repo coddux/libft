@@ -6,7 +6,7 @@
 #    By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/04 12:29:02 by alepercq     #+#   ##    ##    #+#        #
-#    Updated: 2019/02/08 12:25:46 by alepercq    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/02/15 17:57:59 by alepercq    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -71,7 +71,7 @@ SRC			=	ft_atoi.c ft_int_abs.c \
 				ft_toupper.c ft_tolower.c \
 				ft_file_open.c ft_file_read.c get_next_line.c \
 				ft_error.c \
-				ft_tab_icreate.c ft_tab_screate.c \
+				ft_tab_icreate.c ft_tab_screate.c ft_tab_dcreate.c \
 				ft_time_wait.c
 				
 SRCS		=	$(addprefix $(PATH_SRC), $(SRC))

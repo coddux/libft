@@ -6,7 +6,7 @@
 /*   By: alepercq <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 12:27:38 by alepercq     #+#   ##    ##    #+#       */
-/*   Updated: 2019/02/08 12:25:21 by alepercq    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/02/15 17:57:36 by alepercq    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -146,6 +146,7 @@ int		ft_tolower(int i);
 */
 int		**ft_tab_icreate(int line, int column, int nb);
 char	**ft_tab_screate(int line, int column, char c);
+double	**ft_tab_dcreate(int line, int column, double flt);
 
 /*
 ** function file
